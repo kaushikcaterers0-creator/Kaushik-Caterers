@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, ExternalLink, Map as MapIcon } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ExternalLink, Map as MapIcon, Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -12,11 +12,24 @@ export default function Footer() {
             referrerPolicy="no-referrer"
           />
           <h3 className="text-xl font-bold mb-2">Kaushik Caterers</h3>
-          <p className="text-sm opacity-80 leading-relaxed text-center md:text-left">
+          <p className="text-sm opacity-80 leading-relaxed text-center md:text-left mb-6">
             Providing premium catering and event planning services since 1985. 
             We make your special moments unforgettable with delicious food and impeccable service.
           </p>
-          <div className="mt-6">
+          
+          <div className="flex gap-4 mb-6">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <Facebook size={20} />
+            </a>
+            <a href="https://www.instagram.com/kaushikcaterers?igsh=eDNiMWI2YjNucDRi" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <Instagram size={20} />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <Twitter size={20} />
+            </a>
+          </div>
+
+          <div className="mt-auto">
             <p className="text-xs font-mono opacity-60">GST: 05BJTPK9335D1ZY</p>
           </div>
         </div>

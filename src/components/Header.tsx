@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="bg-[#000080] text-white py-4 px-6 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
           <img 
             src="https://i.ibb.co/FZb1htc/Whats-App-Image-2026-03-31-at-12-49-02-1.jpg" 
             alt="Kaushik Caterers Logo" 
@@ -18,7 +18,7 @@ export default function Header() {
             <h1 className="text-2xl font-bold tracking-tight">Kaushik Caterers</h1>
             <p className="text-[10px] opacity-80 uppercase tracking-widest">Since 1985 • Event Planner</p>
           </div>
-        </div>
+        </a>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-sm font-medium">

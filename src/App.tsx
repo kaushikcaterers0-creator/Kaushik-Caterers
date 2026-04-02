@@ -86,11 +86,30 @@ export default function App() {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
         <div className="relative z-10 text-center px-6 max-w-5xl">
+          {/* Status Line inside Hero */}
+          <div className="inline-flex items-center gap-3 bg-[#D4AF37] text-white px-6 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-xl border border-white/20 mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+            </span>
+            Event Planning & Catering Service since 1985
+          </div>
+
           <h2 className="text-5xl md:text-8xl font-bold mb-6 drop-shadow-2xl leading-tight">Crafting Moments<br />That Last Forever</h2>
-          <p className="text-lg md:text-2xl mb-10 opacity-90 font-medium max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-2xl mb-6 opacity-90 font-medium max-w-3xl mx-auto leading-relaxed">
             Since 1985, we've been the heart of celebrations in Dehradun and across India. 
             Exquisite taste, impeccable service, and 41+ years of trust.
           </p>
+
+          {/* Customer Rating */}
+          <div className="flex flex-col items-center mb-10">
+            <div className="flex gap-1 mb-1">
+              {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />)}
+            </div>
+            <p className="text-white font-bold text-xl">4.9/5</p>
+            <p className="text-xs uppercase tracking-widest opacity-70">Customer Rating</p>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-6">
             <a href="/services.html" className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-10 py-4 rounded-full font-bold transition-all shadow-2xl transform hover:scale-105">Explore Services</a>
             <a href="/contact.html" className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-10 py-4 rounded-full font-bold transition-all shadow-2xl transform hover:scale-105">Plan Your Event</a>
