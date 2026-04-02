@@ -138,11 +138,11 @@ function AboutPage() {
           </div>
 
           {/* Why Choose Us */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 bg-white/5 p-12 rounded-[3rem] border border-white/10">
+          <div className="flex flex-col gap-12 mb-24 bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10">
             <div>
               <h3 className="text-yellow-400 font-bold uppercase tracking-widest mb-4">Why Choose Us</h3>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">Excellence in Every Detail & Flavor</h2>
-              <ul className="space-y-6">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   "Fully Customizable Menu tailored to your preferences",
                   "Professional Male and Female Staff for seamless service",
@@ -157,13 +157,10 @@ function AboutPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-yellow-400 p-12 rounded-[2rem] text-green-900">
-              <h4 className="text-2xl font-bold mb-6">Registered & Trusted</h4>
-              <p className="text-lg mb-8 opacity-90">We are a fully compliant business with GST registration, ensuring transparency and professionalism in all our dealings.</p>
-              <div className="bg-green-900/10 p-6 rounded-2xl border border-green-900/20">
-                <p className="text-sm uppercase tracking-widest font-bold opacity-60 mb-1">GSTIN Number</p>
-                <p className="text-3xl font-black">05BJTPK9335D1ZY</p>
-              </div>
+            <div className="bg-yellow-400 p-8 md:p-12 rounded-[2rem] text-green-900">
+              <h4 className="text-2xl font-bold mb-4">Registered & Trusted</h4>
+              <p className="text-lg mb-4 opacity-90">We are a fully compliant business with GST registration, ensuring transparency and professionalism in all our dealings.</p>
+              <p className="text-lg font-bold">GSTIN Number: <span className="break-all">05BJTPK9335D1ZY</span></p>
             </div>
           </div>
 

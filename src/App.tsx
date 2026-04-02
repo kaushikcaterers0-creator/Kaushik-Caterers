@@ -66,7 +66,7 @@ export default function App() {
   return (
     <Layout bgColor="bg-red-700">
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative min-h-[90vh] py-20 flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop" 
@@ -78,12 +78,12 @@ export default function App() {
         </div>
         <div className="relative z-10 text-center px-6 max-w-5xl">
           {/* Status Line inside Hero - Above Title */}
-          <div className="inline-flex items-center gap-3 bg-[#D4AF37] text-white px-6 py-2 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-xl border border-white/20 mb-12">
+          <div className="inline-flex items-center gap-3 bg-[#D4AF37] text-white px-6 py-2 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-xl border border-white/20 mb-6">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
             </span>
-            Event Planning & Catering Service since 1985
+            High-Quality premium service
           </div>
 
           <h2 className="text-5xl md:text-8xl font-bold mb-6 drop-shadow-2xl leading-tight">Crafting Moments<br />That Last Forever</h2>

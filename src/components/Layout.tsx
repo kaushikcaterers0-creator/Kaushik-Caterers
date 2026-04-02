@@ -56,18 +56,26 @@ export default function Layout({ children, bgColor }: LayoutProps) {
               transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
               className="w-1/2 h-full bg-red-900 pointer-events-auto border-l border-yellow-400/30"
             />
-            {/* Logo Lock - Fades out independently */}
+            {/* Logo Lock - Fades out independently with revolving dotted border */}
             <motion.div
               initial={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 1.2 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[110] w-32 h-32 rounded-full bg-white border-4 border-yellow-400 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.5)]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[110] w-40 h-40 flex items-center justify-center"
             >
-              <img 
-                src="https://i.ibb.co/FZb1htc/Whats-App-Image-2026-03-31-at-12-49-02-1.jpg" 
-                alt="Logo Lock" 
-                className="w-28 h-28 rounded-full object-cover"
+              {/* Revolving Dotted Border */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 border-4 border-dotted border-yellow-400 rounded-full"
               />
+              <div className="w-32 h-32 rounded-full bg-white border-4 border-yellow-400 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.5)] relative z-10">
+                <img 
+                  src="https://i.ibb.co/FZb1htc/Whats-App-Image-2026-03-31-at-12-49-02-1.jpg" 
+                  alt="Logo Lock" 
+                  className="w-28 h-28 rounded-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         )}
@@ -108,9 +116,14 @@ export default function Layout({ children, bgColor }: LayoutProps) {
         href="https://wa.link/cjfkqp" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
+        className="fixed bottom-8 right-8 z-50 hover:scale-110 transition-transform flex items-center justify-center group"
       >
-        <MessageCircle size={32} />
+        <img 
+          src="https://i.ibb.co/84BWkwSv/whatsapp-app-round-icon-popular-messenger-social-media-logo-277909-873.avif" 
+          alt="WhatsApp" 
+          className="w-16 h-16 rounded-full shadow-2xl border-2 border-white"
+          referrerPolicy="no-referrer"
+        />
         <span className="absolute right-full mr-4 bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
           Chat with us
         </span>
