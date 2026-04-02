@@ -1,16 +1,17 @@
 import Layout from './components/Layout';
+import { motion } from 'motion/react';
 import { Utensils, Award, Users, Calendar, Star, Quote, ArrowRight } from 'lucide-react';
 
 const homeServices = [
   {
     title: "Birthday Parties",
     description: "Make your special day unforgettable with our vibrant catering and decor.",
-    image: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=2069&auto=format&fit=crop"
+    image: "https://i.ibb.co/fVx9rdpj/Whats-App-Image-2026-04-02-at-09-44-20-1.jpg"
   },
   {
     title: "Kitty Parties",
     description: "Elegant and fun setups for your social gatherings.",
-    image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop"
+    image: "https://i.ibb.co/tpKK2m3C/Whats-App-Image-2026-04-02-at-09-44-52.jpg"
   },
   {
     title: "Corporate/School Parties",
@@ -25,22 +26,12 @@ const homeServices = [
   {
     title: "Wedding",
     description: "Grand wedding planning and catering for your big day.",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop"
+    image: "https://i.ibb.co/1fS5nMrk/Whats-App-Image-2026-04-02-at-09-46-57-2.jpg"
   },
   {
     title: "Bhandara",
     description: "Traditional large-scale community feast catering.",
-    image: "https://images.unsplash.com/photo-1563245332-692739e746e7?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    title: "Tent",
-    description: "High-quality tenting solutions for all weather conditions.",
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop"
-  },
-  {
-    title: "Decoration",
-    description: "Thematic and floral decorations that set the mood.",
-    image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2070&auto=format&fit=crop"
+    image: "https://i.ibb.co/93nrJLcD/Whats-App-Image-2026-04-02-at-09-55-35.jpg"
   }
 ];
 
@@ -86,11 +77,11 @@ export default function App() {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
         <div className="relative z-10 text-center px-6 max-w-5xl">
-          {/* Status Line inside Hero */}
-          <div className="inline-flex items-center gap-3 bg-[#D4AF37] text-white px-6 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-xl border border-white/20 mb-8">
+          {/* Status Line inside Hero - Above Title */}
+          <div className="inline-flex items-center gap-3 bg-[#D4AF37] text-white px-6 py-2 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-xl border border-white/20 mb-12">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
             </span>
             Event Planning & Catering Service since 1985
           </div>
@@ -114,6 +105,18 @@ export default function App() {
             <a href="/services.html" className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-10 py-4 rounded-full font-bold transition-all shadow-2xl transform hover:scale-105">Explore Services</a>
             <a href="/contact.html" className="bg-[#D4AF37] hover:bg-[#B8860B] text-white px-10 py-4 rounded-full font-bold transition-all shadow-2xl transform hover:scale-105">Plan Your Event</a>
           </div>
+        </div>
+      </section>
+
+      {/* Banner Section */}
+      <section className="w-full bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          <img 
+            src="https://i.ibb.co/HpgBBvkM/Whats-App-Image-2026-04-02-at-12-43-06.jpg" 
+            alt="Promotional Banner" 
+            className="w-full h-auto rounded-2xl shadow-2xl border-4 border-yellow-400/20"
+            referrerPolicy="no-referrer"
+          />
         </div>
       </section>
 
@@ -151,7 +154,14 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {homeServices.map((service, index) => (
-              <div key={index} className="group bg-white rounded-2xl overflow-hidden shadow-xl border border-white/10 hover:shadow-2xl transition-all duration-500">
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-xl border border-white/10 hover:shadow-2xl transition-all duration-500"
+              >
                 <div className="h-48 overflow-hidden relative">
                   <img 
                     src={service.image} 
@@ -168,14 +178,20 @@ export default function App() {
                     Visit us <ArrowRight size={16} />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           <div className="mt-16 text-center">
-            <a href="/services.html" className="inline-block bg-yellow-400 text-red-900 px-12 py-4 rounded-full font-bold hover:bg-yellow-300 transition-all shadow-xl">
+            <motion.a 
+              href="/services.html"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-block bg-yellow-400 text-red-900 px-12 py-4 rounded-full font-bold hover:bg-yellow-300 transition-all shadow-xl"
+            >
               View More Services
-            </a>
+            </motion.a>
           </div>
         </div>
       </section>
@@ -190,7 +206,14 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, index) => (
-              <div key={index} className="bg-white p-8 rounded-3xl shadow-lg border border-white/10 relative">
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white p-8 rounded-3xl shadow-lg border border-white/10 relative"
+              >
                 <Quote className="absolute top-6 right-8 text-gray-100" size={60} />
                 <div className="flex items-center gap-4 mb-6">
                   <img 
@@ -208,7 +231,7 @@ export default function App() {
                 <div className="flex gap-1 mt-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />)}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

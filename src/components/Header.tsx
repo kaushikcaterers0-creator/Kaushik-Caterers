@@ -28,13 +28,6 @@ export default function Header() {
           <a href="/contact.html" className="hover:text-yellow-400 transition-colors">Contact Us</a>
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4 text-xs">
-          <div className="flex items-center gap-1">
-            <Phone size={14} className="text-yellow-400" />
-            <span>+91 9897159674</span>
-          </div>
-        </div>
-
         {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-white"
@@ -51,10 +44,6 @@ export default function Header() {
           <a href="/services.html" className="hover:text-yellow-400 transition-colors px-2">Services</a>
           <a href="/about.html" className="hover:text-yellow-400 transition-colors px-2">About Us</a>
           <a href="/contact.html" className="hover:text-yellow-400 transition-colors px-2">Contact Us</a>
-          <div className="flex items-center gap-2 px-2 text-sm">
-            <Phone size={16} className="text-yellow-400" />
-            <span>+91 9897159674</span>
-          </div>
         </nav>
       )}
     </header>
