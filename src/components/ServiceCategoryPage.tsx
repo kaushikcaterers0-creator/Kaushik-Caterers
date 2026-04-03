@@ -1,12 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './Layout';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, CheckCircle2, Send, Trash2, Copy, Bot, User, Sparkles, X, MessageSquare } from 'lucide-react';
-
-interface Message {
-  role: 'user' | 'ai';
-  content: string;
-}
+import { ArrowLeft, CheckCircle2, X, MessageSquare } from 'lucide-react';
 
 interface SubService {
   title: string;
@@ -25,62 +20,11 @@ export default function ServiceCategoryPage({ title, description, services }: Se
   const [selectedService, setSelectedService] = useState('');
   const [cateringType, setCateringType] = useState(title);
   const [otherCateringType, setOtherCateringType] = useState('');
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'ai', content: `Hello! I'm your AI Event Planner. I see you're interested in ${title}. How can I help you plan your perfect event today?` }
-  ]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
 
   // Ensure page starts at top on load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
-
-    const userMessage = input.trim();
-    setInput('');
-    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/plan", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: `You are an expert event planner for Kaushik Caterers. The user is currently on the ${title} page. Help them plan their event. Mention our specialties like Biryani and professional staff if relevant. User says: ${userMessage}`,
-          systemInstruction: "You are a helpful, professional, and creative event planner for Kaushik Caterers. Your goal is to help users plan their events by providing catering and decor ideas. Keep responses concise and engaging.",
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to connect to AI server");
-      }
-
-      const data = await response.json();
-      const aiResponse = data.text;
-      
-      if (!aiResponse) throw new Error("Empty response from AI");
-      setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
-    } catch (error) {
-      console.error("AI Error:", error);
-      setMessages(prev => [...prev, { role: 'ai', content: "Sorry, I'm having trouble connecting right now. Please try again later." }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const openModal = (serviceTitle: string) => {
     setSelectedService(serviceTitle);
@@ -150,87 +94,6 @@ export default function ServiceCategoryPage({ title, description, services }: Se
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* AI Planner Section */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-red-900 mb-4">Plan Your {title} with AI</h2>
-            <p className="text-red-900/70">Get instant suggestions and ideas for your special occasion</p>
-          </div>
-          
-          <div className="bg-slate-900 rounded-[2rem] shadow-2xl border border-white/10 overflow-hidden flex flex-col h-[600px] max-w-5xl mx-auto">
-            <div className="p-6 border-b border-white/10 flex justify-between items-center bg-white/5">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white p-1 border-2 border-yellow-400">
-                  <img 
-                    src="https://i.ibb.co/FZb1htc/Whats-App-Image-2026-03-31-at-12-49-02-1.jpg" 
-                    alt="Kaushik Caterers" 
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold">Kaushik AI Assistant</h3>
-                  <span className="text-[10px] text-green-400 uppercase tracking-widest font-bold">Online</span>
-                </div>
-              </div>
-              <button 
-                onClick={() => setMessages([{ role: 'ai', content: "Chat cleared. How can I help you plan your event?" }])}
-                className="p-2 text-slate-400 hover:text-red-400 transition-colors"
-              >
-                <Trash2 size={20} />
-              </button>
-            </div>
-
-            <div className="flex-grow overflow-y-auto p-8 space-y-6 scrollbar-hide">
-              {messages.map((msg, i) => (
-                <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`flex gap-4 max-w-[80%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'user' ? 'bg-yellow-400' : 'bg-red-600'}`}>
-                      {msg.role === 'user' ? <User size={20} className="text-slate-900" /> : <Bot size={20} className="text-white" />}
-                    </div>
-                    <div className={`p-5 rounded-2xl text-sm leading-relaxed ${
-                      msg.role === 'user' 
-                        ? 'bg-yellow-400 text-slate-900 rounded-tr-none' 
-                        : 'bg-slate-800 text-slate-100 rounded-tl-none'
-                    }`}>
-                      {msg.content}
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-slate-800 p-5 rounded-2xl rounded-tl-none flex gap-2">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
-                  </div>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
-
-            <div className="p-6 bg-white/5 border-t border-white/10">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                  placeholder="Ask me anything..."
-                  className="w-full bg-slate-800 border border-white/10 text-white rounded-2xl py-5 px-6 pr-16 focus:outline-none focus:border-yellow-400/50 transition-all"
-                />
-                <button
-                  onClick={handleSend}
-                  disabled={isLoading || !input.trim()}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-3 bg-yellow-400 text-slate-900 rounded-xl hover:bg-yellow-300 transition-all disabled:opacity-50"
-                >
-                  <Send size={20} />
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

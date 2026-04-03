@@ -23,7 +23,6 @@ export default defineConfig(({mode}) => {
           about: path.resolve(__dirname, 'about.html'),
           contact: path.resolve(__dirname, 'contact.html'),
           gallery: path.resolve(__dirname, 'gallery.html'),
-          'ai-planner': path.resolve(__dirname, 'ai-planner.html'),
           'catering-services': path.resolve(__dirname, 'catering-services.html'),
           'party-planning': path.resolve(__dirname, 'party-planning.html'),
           'wedding-services': path.resolve(__dirname, 'wedding-services.html'),

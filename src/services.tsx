@@ -203,9 +203,6 @@ function ServicesPage() {
             <a href="/contact.html" className="bg-yellow-400 text-sky-900 px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl">
               Book Appointment
             </a>
-            <a href="/ai-planner.html" className="bg-white/10 backdrop-blur-md border border-white/30 px-12 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
-              Plan with AI
-            </a>
           </div>
         </div>
       </section>
