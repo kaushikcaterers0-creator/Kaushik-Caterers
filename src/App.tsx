@@ -70,7 +70,7 @@ export default function App() {
   return (
     <Layout bgColor="bg-red-700">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] py-10 flex items-center justify-center text-white overflow-hidden">
+      <section className="relative min-h-[60vh] py-0 flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop" 
@@ -192,13 +192,13 @@ export default function App() {
 
           <div className="mt-16 text-center">
             <motion.a 
-              href="/gallery.html"
+              href="/services.html"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="inline-block bg-yellow-400 text-red-900 px-12 py-4 rounded-full font-bold hover:bg-yellow-300 transition-all shadow-xl"
             >
-              View Event Gallery
+              View all Services
             </motion.a>
           </div>
         </div>

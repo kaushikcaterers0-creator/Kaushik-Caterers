@@ -91,8 +91,8 @@ export default function Layout({ children, bgColor }: LayoutProps) {
       </div>
 
       {/* Excellence Box below Marquee */}
-      <div className="bg-red-900 py-1 flex justify-center border-b border-yellow-400/20">
-        <div className="inline-flex items-center gap-3 bg-white/10 text-white px-4 py-1 rounded-md text-[10px] md:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
+      <div className="bg-red-900 py-0 flex justify-center border-b border-yellow-400/20">
+        <div className="inline-flex items-center gap-3 bg-white/10 text-white px-4 py-0.5 rounded-md text-[10px] md:text-xs font-bold uppercase tracking-widest border border-white/20 shadow-lg">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>

@@ -25,6 +25,7 @@ export default function Header() {
           <a href="/" className="hover:text-yellow-400 transition-colors">Home</a>
           <a href="/services.html" className="hover:text-yellow-400 transition-colors">Services</a>
           <a href="/gallery.html" className="hover:text-yellow-400 transition-colors">Gallery</a>
+          <a href="/ai-planner.html" className="hover:text-yellow-400 transition-colors">AI Planner</a>
           <a href="/about.html" className="hover:text-yellow-400 transition-colors">About Us</a>
           <a href="/contact.html" className="hover:text-yellow-400 transition-colors">Contact Us</a>
         </nav>
@@ -44,6 +45,7 @@ export default function Header() {
           <a href="/" className="hover:text-yellow-400 transition-colors px-2">Home</a>
           <a href="/services.html" className="hover:text-yellow-400 transition-colors px-2">Services</a>
           <a href="/gallery.html" className="hover:text-yellow-400 transition-colors px-2">Gallery</a>
+          <a href="/ai-planner.html" className="hover:text-yellow-400 transition-colors px-2">AI Planner</a>
           <a href="/about.html" className="hover:text-yellow-400 transition-colors px-2">About Us</a>
           <a href="/contact.html" className="hover:text-yellow-400 transition-colors px-2">Contact Us</a>
         </nav>

@@ -66,8 +66,9 @@ function GalleryPage() {
 
   return (
     <Layout bgColor="bg-slate-900">
-      <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+      <div className="pt-8 pb-20 px-6 max-w-7xl mx-auto">
+        <div className="text-center mb-8 relative">
+          <div className="absolute inset-0 bg-yellow-400/5 blur-3xl rounded-full -z-10" />
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
