@@ -49,15 +49,14 @@ function AIPlannerPage() {
       const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await genAI.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: [
-          { role: 'user', parts: [{ text: `You are an expert event planner for Kaushik Caterers (since 1985, based in Dehradun). Help the user plan their event. Mention our specialties like Biryani, live catering, and professional staff if relevant. User says: ${userMessage}` }] }
-        ],
+        contents: `You are an expert event planner for Kaushik Caterers (since 1985, based in Dehradun). Help the user plan their event. Mention our specialties like Biryani, live catering, and professional staff if relevant. User says: ${userMessage}`,
         config: {
           systemInstruction: "You are a helpful, professional, and creative event planner for Kaushik Caterers. Your goal is to help users plan their events (weddings, birthdays, corporate, etc.) by providing catering and decor ideas. Keep responses concise and engaging.",
         }
       });
 
-      const aiResponse = response.text || "I'm sorry, I couldn't process that. Please try again.";
+      const aiResponse = response.text;
+      if (!aiResponse) throw new Error("Empty response from AI");
       setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
     } catch (error) {
       console.error("AI Error:", error);
@@ -183,7 +182,7 @@ function AIPlannerPage() {
               </button>
             </div>
             <p className="text-xs text-slate-500 text-center mt-4 uppercase tracking-widest font-bold">
-              Powered by Kaushik AI • Since 1985
+              Powered by Gemini
             </p>
           </div>
         </div>

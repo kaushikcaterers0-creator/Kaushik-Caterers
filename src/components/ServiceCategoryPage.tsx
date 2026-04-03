@@ -59,15 +59,14 @@ export default function ServiceCategoryPage({ title, description, services }: Se
       const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await genAI.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: [
-          { role: 'user', parts: [{ text: `You are an expert event planner for Kaushik Caterers. The user is currently on the ${title} page. Help them plan their event. Mention our specialties like Biryani and professional staff if relevant. User says: ${userMessage}` }] }
-        ],
+        contents: `You are an expert event planner for Kaushik Caterers. The user is currently on the ${title} page. Help them plan their event. Mention our specialties like Biryani and professional staff if relevant. User says: ${userMessage}`,
         config: {
           systemInstruction: "You are a helpful, professional, and creative event planner for Kaushik Caterers. Your goal is to help users plan their events by providing catering and decor ideas. Keep responses concise and engaging.",
         }
       });
 
-      const aiResponse = response.text || "I'm sorry, I couldn't process that. Please try again.";
+      const aiResponse = response.text;
+      if (!aiResponse) throw new Error("Empty response from AI");
       setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
     } catch (error) {
       console.error("AI Error:", error);
