@@ -18,14 +18,17 @@ export default function Footer() {
           </p>
           
           <div className="flex gap-4 mb-6">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+            <a href="https://www.facebook.com/share/18ezBZcW2q/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors" title="Facebook">
               <Facebook size={20} />
             </a>
-            <a href="https://www.instagram.com/kaushikcaterers?igsh=eDNiMWI2YjNucDRi" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+            <a href="https://www.instagram.com/kaushikcaterers?igsh=eDNiMWI2YjNucDRi" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors" title="Instagram">
               <Instagram size={20} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
-              <Twitter size={20} />
+            <a href="https://jsdl.in/DT-99IQEIMAUIU" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors" title="Justdial">
+              <Phone size={20} />
+            </a>
+            <a href="https://share.google/u43J5DsZOmzBeHYi3" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors" title="Google Business">
+              <MapPin size={20} />
             </a>
           </div>
 

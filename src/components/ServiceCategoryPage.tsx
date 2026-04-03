@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import Layout from './Layout';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, CheckCircle2, Send, Trash2, Copy, Bot, User, Sparkles, X, MessageSquare } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
 
 interface Message {
   role: 'user' | 'ai';
@@ -55,17 +54,24 @@ export default function ServiceCategoryPage({ title, description, services }: Se
     setIsLoading(true);
 
     try {
-      // Initialize AI inside handler to ensure fresh key access
-      const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      const response = await genAI.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: `You are an expert event planner for Kaushik Caterers. The user is currently on the ${title} page. Help them plan their event. Mention our specialties like Biryani and professional staff if relevant. User says: ${userMessage}`,
-        config: {
+      const response = await fetch("/api/plan", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `You are an expert event planner for Kaushik Caterers. The user is currently on the ${title} page. Help them plan their event. Mention our specialties like Biryani and professional staff if relevant. User says: ${userMessage}`,
           systemInstruction: "You are a helpful, professional, and creative event planner for Kaushik Caterers. Your goal is to help users plan their events by providing catering and decor ideas. Keep responses concise and engaging.",
-        }
+        }),
       });
 
-      const aiResponse = response.text;
+      if (!response.ok) {
+        throw new Error("Failed to connect to AI server");
+      }
+
+      const data = await response.json();
+      const aiResponse = data.text;
+      
       if (!aiResponse) throw new Error("Empty response from AI");
       setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
     } catch (error) {

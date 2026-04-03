@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import './index.css';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Trash2, Copy, Bot, User, Sparkles } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
 
 interface Message {
   role: 'user' | 'ai';
@@ -45,17 +44,24 @@ function AIPlannerPage() {
     setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
     setIsLoading(true);
     try {
-      // Initialize AI inside handler to ensure fresh key access
-      const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      const response = await genAI.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: `You are an expert event planner for Kaushik Caterers (since 1985, based in Dehradun). Help the user plan their event. Mention our specialties like Biryani, live catering, and professional staff if relevant. User says: ${userMessage}`,
-        config: {
+      const response = await fetch("/api/plan", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `You are an expert event planner for Kaushik Caterers (since 1985, based in Dehradun). Help the user plan their event. Mention our specialties like Biryani, live catering, and professional staff if relevant. User says: ${userMessage}`,
           systemInstruction: "You are a helpful, professional, and creative event planner for Kaushik Caterers. Your goal is to help users plan their events (weddings, birthdays, corporate, etc.) by providing catering and decor ideas. Keep responses concise and engaging.",
-        }
+        }),
       });
 
-      const aiResponse = response.text;
+      if (!response.ok) {
+        throw new Error("Failed to connect to AI server");
+      }
+
+      const data = await response.json();
+      const aiResponse = data.text;
+      
       if (!aiResponse) throw new Error("Empty response from AI");
       setMessages(prev => [...prev, { role: 'ai', content: aiResponse }]);
     } catch (error) {
