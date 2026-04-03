@@ -39,6 +39,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm opacity-80">
             <li><a href="/" className="hover:underline">Home</a></li>
             <li><a href="/services.html" className="hover:underline">Our Services</a></li>
+            <li><a href="/gallery.html" className="hover:underline">Event Gallery</a></li>
             <li><a href="/about.html" className="hover:underline">About Our Legacy</a></li>
             <li><a href="/contact.html" className="hover:underline">Get in Touch</a></li>
           </ul>
