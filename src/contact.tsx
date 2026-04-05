@@ -31,8 +31,6 @@ function ContactPage() {
                     <label className="block text-sm font-medium mb-2">Phone Number</label>
                     <input name="phone" type="tel" required className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all" placeholder="+91 0000000000" />
                   </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2">Email Address</label>
                     <input name="email" type="email" required className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all" placeholder="example@gmail.com" />
@@ -41,8 +39,6 @@ function ContactPage() {
                     <label className="block text-sm font-medium mb-2">Persons Approx</label>
                     <input name="persons" type="number" required className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all" placeholder="e.g. 200" />
                   </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2">Service Type</label>
                     <select name="service" className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all appearance-none text-black font-medium">
@@ -59,10 +55,10 @@ function ContactPage() {
                     <label className="block text-sm font-medium mb-2">Event Date</label>
                     <input name="date" type="date" required className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all" />
                   </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Description</label>
-                  <textarea name="description" rows={4} required className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all" placeholder="Tell us about your event requirements..."></textarea>
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-medium mb-2">Description</label>
+                    <textarea name="description" rows={4} required className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all" placeholder="Tell us about your event requirements..."></textarea>
+                  </div>
                 </div>
                 <button type="submit" className="w-full bg-yellow-400 text-magenta-900 font-bold py-4 rounded-xl hover:bg-yellow-300 transition-all flex items-center justify-center gap-2 shadow-xl">
                   Send Inquiry <Send size={18} />

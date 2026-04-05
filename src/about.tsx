@@ -7,28 +7,34 @@ import { motion } from 'motion/react';
 
 const testimonials = [
   {
-    name: "Amit Sharma",
-    role: "Local Resident",
-    text: "Kaushik Caterers is a great place! The food is fresh and very tasty. You get good quantity for a reasonable price. It's child-friendly, so families will love it. The ambience is nice and welcoming.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+    name: "Shalini Abhishek",
+    role: "7 reviews · 9 photos",
+    text: "We wanted to thank you for making our 3 day's wedding function enjoyable. The food was remarkable and the staff was very well-timed, professional and cordial. Everything worked out perfectly. You achieved everything we were hoping for, a relaxed atmosphere and delicious food. Thankyou Rahul ji for your cooperation. The quality nd the taste of food plus the decoration was appreciated by whoever visited our function. Till now we had not come across anyone who could have done such a remarkable job.",
+    image: "https://images.unsplash.com/photo-1619380061814-58f03707f082?q=80&w=1974&auto=format&fit=crop"
   },
   {
-    name: "Priya Verma",
-    role: "Corporate Client",
-    text: "We had an office party catered by Kaushik Caterers, and it was flawless from start to end. The staff was professional, the setup was neat, and the biryani had everyone going for seconds!",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop"
+    name: "Akshit Barthwal",
+    role: "9 reviews · 2 photos",
+    text: "No words are enough to describe the exceptional services provided by Kaushik caterers. We hired them for Sunderkand and my brother's mehendi & haldi ceremonies. They even managed the tent and decor apart from food. 1) The food was absolutely delicious at all events. Guests couldn't stop complementing the food taste. 2) The decor was awesome. We gave them pics from internet and they delivered what we required. 3) The rates were very competitive. We got a good bargain when compared to other event planners I talked to. 4) Rahul Kaushik is a very gentle and well-mannered person. He promptly accomodated our last-minute requests without complaining once. I can't thank him enough for making our events such a success. 10/5 stars.",
+    image: "https://i.ibb.co/tP380hpW/Whats-App-Image-2026-04-05-at-21-37-19.jpg"
   },
   {
-    name: "Rahul Kapoor",
-    role: "Groom",
-    text: "Kaushik Caterers never fails to impress—booked them for our wedding and they delivered beyond expectations. Clean presentation, flavorful dishes, and live catering were spot on.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop"
+    name: "Ayush Rawat",
+    role: "Local Guide · 19 reviews · 2 photos",
+    text: "We booked Kaushik Ji Caterers for my brother’s wedding, and they did an outstanding job. They are our old and trusted caterers, and once again they managed everything confidently and smoothly. They were always open to suggestions and very cooperative throughout the event. The food was remarkably tasty and hygienic — every guest appreciated the quality and presentation. All the waiters were properly dressed, well-mannered, and highly professional. Highly recommended for anyone looking for reliable and quality catering services for weddings or special occasions. 👍",
+    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1974&auto=format&fit=crop"
   },
   {
-    name: "Anjali Gupta",
-    role: "Home Maker",
-    text: "The best catering service in Dehradun. Their attention to detail and authentic flavors are unmatched. Highly recommended for any family function!",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop"
+    name: "Gurmeet Singh",
+    role: "Local Guide · 20 reviews",
+    text: "Kaushik Caterers deliver consistently high quality food with excellent taste, presentation & portion sizes. Their team is professional, well organized & punctual, making events smooth and hassle-free. Overall, they offer great value for money and are a reliable choice for weddings and family functions. We recommend kaishik caterers to everyone.",
+    image: "https://i.ibb.co/sprV3w4H/Whats-App-Image-2026-04-05-at-21-36-07.jpg"
+  },
+  {
+    name: "Sunidhi Istwal",
+    role: "2 reviews · 2 photos",
+    text: "One of the best catering service. Recently my sister got married and the entire function was at home from cocktail party /mehendi and haldi ceremony to wedding . The food was so delicious and the decorations was top notch . Each and Everything was very perfect. A huge Thanks to kaushik bhaiya and his entire crew for making my sister’s wedding day very special and i highly recommend kaushik catering service to all the people who wants the best catering service in town",
+    image: "https://i.ibb.co/1JLhwHq0/Whats-App-Image-2026-04-05-at-21-34-23.jpg"
   }
 ];
 
