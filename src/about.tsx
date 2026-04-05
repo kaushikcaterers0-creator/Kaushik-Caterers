@@ -62,6 +62,22 @@ function AboutPage() {
             </div>
           </div>
 
+          {/* Banner Image */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="mb-24 rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10 relative group cursor-pointer"
+          >
+            <img 
+              src="https://i.ibb.co/39bkTk6k/Whats-App-Image-2026-04-05-at-08-50-21.jpg" 
+              alt="Kaushik Caterers Banner" 
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+          </motion.div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">

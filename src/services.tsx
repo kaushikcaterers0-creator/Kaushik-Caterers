@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Layout from './components/Layout';
 import './index.css';
 import { motion } from 'motion/react';
-import { CheckCircle2, Users, Utensils, Music, Calendar, Star, Heart, PartyPopper, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Users, Utensils, Music, Calendar, Star, Heart, PartyPopper, ArrowRight, ChevronRight } from 'lucide-react';
 
 const serviceCategories = [
   {
@@ -191,6 +191,53 @@ function ServicesPage() {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-red-900 font-bold uppercase tracking-widest mb-4"
+          >
+            Exclusive Deals
+          </motion.h3>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-8"
+          >
+            Our Special Packages
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-slate-600 max-w-2xl mx-auto mb-12"
+          >
+            Discover our curated selection of event packages designed to provide the best value and experience for your celebrations.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <a 
+              href="/packages.html"
+              className="inline-flex items-center gap-3 bg-red-900 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-red-800 transition-all shadow-xl shadow-red-900/20 group"
+            >
+              <PartyPopper size={24} />
+              View Our Packages
+              <ChevronRight className="group-hover:translate-x-1 transition-transform" size={24} />
+            </a>
+          </motion.div>
         </div>
       </section>
 

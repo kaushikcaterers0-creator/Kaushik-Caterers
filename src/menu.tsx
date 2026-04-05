@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import Layout from './components/Layout';
 import './index.css';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ZoomIn, ChevronLeft, ChevronRight, Plus, Minus, RotateCcw } from 'lucide-react';
-import { galleryImages, GalleryImage } from './data/gallery';
+import { menuImages } from './data/extra-gallery';
 
-const categories = ['All', 'Decorations', 'Catering', 'Events', 'Team'] as const;
-type Category = typeof categories[number];
-
-function GalleryPage() {
-  const [activeFilter, setActiveFilter] = useState<Category>('All');
-  const [filteredImages, setFilteredImages] = useState<GalleryImage[]>(galleryImages);
+function MenuPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [zoomScale, setZoomScale] = useState(1);
-
-  useEffect(() => {
-    if (activeFilter === 'All') {
-      setFilteredImages(galleryImages);
-    } else {
-      setFilteredImages(galleryImages.filter(img => img.category === activeFilter));
-    }
-  }, [activeFilter]);
 
   const openLightbox = (index: number) => {
     setSelectedIndex(index);
@@ -36,7 +23,7 @@ function GalleryPage() {
   const nextImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % filteredImages.length);
+      setSelectedIndex((selectedIndex + 1) % menuImages.length);
       setZoomScale(1);
     }
   };
@@ -44,7 +31,7 @@ function GalleryPage() {
   const prevImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + filteredImages.length) % filteredImages.length);
+      setSelectedIndex((selectedIndex - 1 + menuImages.length) % menuImages.length);
       setZoomScale(1);
     }
   };
@@ -67,7 +54,7 @@ function GalleryPage() {
   return (
     <Layout bgColor="bg-slate-900">
       <div className="pt-8 pb-20 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-8 relative">
+        <div className="text-center mb-12 relative">
           <div className="absolute inset-0 bg-yellow-400/5 blur-3xl rounded-full -z-10" />
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +62,7 @@ function GalleryPage() {
             viewport={{ once: true }}
             className="text-yellow-400 font-bold uppercase tracking-widest mb-2"
           >
-            Visual Journey
+            Our Offerings
           </motion.h3>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -84,7 +71,7 @@ function GalleryPage() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
-            Event Gallery
+            Catering Menu
           </motion.h2>
           <motion.div 
             initial={{ width: 0 }}
@@ -92,77 +79,38 @@ function GalleryPage() {
             viewport={{ once: true }}
             className="h-1.5 bg-yellow-400 mx-auto rounded-full mb-12"
           />
-
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={`px-6 py-2 rounded-full font-bold transition-all duration-300 border-2 ${
-                  activeFilter === cat 
-                    ? 'bg-yellow-400 border-yellow-400 text-slate-900 shadow-[0_0_20px_rgba(250,204,21,0.3)] scale-105' 
-                    : 'bg-transparent border-white/20 text-white hover:border-yellow-400/50'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="mb-12"
-          >
-            <a 
-              href="/menu.html"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-yellow-400 hover:text-slate-900 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 border border-white/20 hover:border-yellow-400 group"
-            >
-              View Our Full Menu
-              <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-          </motion.div>
+          <p className="text-white/60 max-w-2xl mx-auto text-lg">
+            Explore our diverse range of culinary delights, from traditional favorites to modern fusion dishes.
+          </p>
         </div>
 
-        <motion.div 
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredImages.map((image, index) => (
-              <motion.div
-                key={image.url}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="group cursor-pointer"
-                onClick={() => openLightbox(index)}
-              >
-                <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-4 shadow-xl border border-white/10 bg-slate-800">
-                  <img 
-                    src={image.url} 
-                    alt={image.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="bg-yellow-400 text-black p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                      <ZoomIn size={24} />
-                    </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {menuImages.map((url, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="group cursor-pointer"
+              onClick={() => openLightbox(index)}
+            >
+              <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4 shadow-xl border border-white/10 bg-slate-800">
+                <img 
+                  src={url} 
+                  alt={`Menu Page ${index + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="bg-yellow-400 text-black p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                    <ZoomIn size={24} />
                   </div>
                 </div>
-                <h3 className="text-white font-bold text-lg text-center group-hover:text-yellow-400 transition-colors">
-                  {image.title}
-                </h3>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* Lightbox */}
@@ -225,8 +173,8 @@ function GalleryPage() {
                 <motion.img 
                   animate={{ scale: zoomScale }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  src={filteredImages[selectedIndex].url} 
-                  alt={filteredImages[selectedIndex].title} 
+                  src={menuImages[selectedIndex]} 
+                  alt={`Menu Page ${selectedIndex + 1}`} 
                   className="max-w-full max-h-full object-contain rounded-lg shadow-2xl cursor-grab active:cursor-grabbing"
                   referrerPolicy="no-referrer"
                   drag={zoomScale > 1}
@@ -235,15 +183,8 @@ function GalleryPage() {
               </div>
               
               <div className="absolute bottom-24 text-center w-full px-6">
-                <motion.h3 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-white text-xl md:text-2xl font-bold bg-black/60 backdrop-blur-md px-8 py-3 rounded-full border border-yellow-400/30 inline-block shadow-2xl"
-                >
-                  {filteredImages[selectedIndex].title}
-                </motion.h3>
                 <p className="text-white/50 text-sm mt-2 font-medium tracking-widest uppercase">
-                  Image {selectedIndex + 1} of {filteredImages.length}
+                  Page {selectedIndex + 1} of {menuImages.length}
                 </p>
               </div>
             </motion.div>
@@ -257,5 +198,5 @@ function GalleryPage() {
 const container = document.getElementById('root');
 if (container) {
   const root = createRoot(container);
-  root.render(<GalleryPage />);
+  root.render(<MenuPage />);
 }
