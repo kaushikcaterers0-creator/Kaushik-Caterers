@@ -74,7 +74,7 @@ const testimonials = [
 
 export default function App() {
   return (
-    <Layout bgColor="bg-red-700">
+    <Layout bgColor="bg-red-50">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] py-0 flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -134,36 +134,36 @@ export default function App() {
         </div>
       </section>
 
-      {/* Stats Section - Now Red Background */}
-      <section className="py-16 px-6 bg-red-800 border-y border-red-900/30">
+      {/* Stats Section - Now Baby Red Background */}
+      <section className="py-16 px-6 bg-red-100 border-y border-red-200">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">41+</div>
-              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-white/70">Years of Trust</div>
+              <div className="text-4xl md:text-5xl font-black text-red-700 mb-2">41+</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-600">Years of Trust</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">2500+</div>
-              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-white/70">Catering Capacity</div>
+              <div className="text-4xl md:text-5xl font-black text-red-700 mb-2">2500+</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-600">Catering Capacity</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">4000+</div>
-              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-white/70">Events Done</div>
+              <div className="text-4xl md:text-5xl font-black text-red-700 mb-2">4000+</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-600">Events Done</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">100%</div>
-              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-white/70">Satisfaction</div>
+              <div className="text-4xl md:text-5xl font-black text-red-700 mb-2">100%</div>
+              <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-600">Satisfaction</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Cards Section - Now Red Background */}
-      <section className="py-24 px-6 bg-red-700">
+      {/* Services Cards Section - Now Baby Red Background */}
+      <section className="py-24 px-6 bg-red-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Specializations</h2>
-            <div className="h-1 w-20 bg-yellow-400 mx-auto"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Our Specializations</h2>
+            <div className="h-1 w-20 bg-red-600 mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-5xl mx-auto">
@@ -186,10 +186,10 @@ export default function App() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <div className="p-4 md:p-6">
-                  <h3 className="text-base md:text-xl font-bold text-gray-900 mb-2 leading-tight min-h-[4rem] flex items-center">
+                  <h3 className="text-base md:text-xl font-bold text-slate-900 mb-2 leading-tight min-h-[4rem] flex items-center">
                     {service.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-gray-600 mb-6">
+                  <p className="text-xs md:text-sm text-slate-700 mb-6">
                     {service.description}
                   </p>
                   <a href="/services.html" className="inline-flex items-center gap-2 text-red-700 font-bold text-xs md:text-sm hover:gap-3 transition-all">
@@ -215,18 +215,18 @@ export default function App() {
       </section>
 
       {/* Gallery Highlights Section */}
-      <section className="py-24 px-6 bg-red-900">
+      <section className="py-24 px-6 bg-red-100">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
-              <h3 className="text-yellow-400 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
+              <h3 className="text-red-600 font-bold uppercase tracking-widest mb-2 flex items-center gap-2">
                 <Camera size={20} /> Visual Journey
               </h3>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">Recent Event Highlights</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Recent Event Highlights</h2>
             </div>
             <a 
               href="/gallery.html" 
-              className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-full font-bold border border-white/20 transition-all flex items-center gap-2"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-all flex items-center gap-2"
             >
               View More in Gallery <ArrowRight size={20} />
             </a>
@@ -262,12 +262,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* Testimonials Section - Now Red Background */}
-      <section className="py-24 px-6 bg-red-800">
+      {/* Testimonials Section - Now Baby Red Background */}
+      <section className="py-24 px-6 bg-red-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h3 className="text-yellow-400 font-bold uppercase tracking-widest mb-2">Testimonials</h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">What Our Clients Say</h2>
+            <h3 className="text-red-600 font-bold uppercase tracking-widest mb-2">Testimonials</h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900">What Our Clients Say</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -304,7 +304,7 @@ export default function App() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-6 bg-red-900 text-white text-center">
+      <section className="py-20 px-6 bg-red-600 text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-yellow-400">Ready to make your event legendary?</h2>
           <p className="text-lg opacity-80 mb-10">Contact Rahul Kaushik today for a customized quote and expert planning.</p>

@@ -59,9 +59,9 @@ function ServicesPage() {
   }, []);
 
   return (
-    <Layout bgColor="bg-sky-400">
+    <Layout bgColor="bg-sky-50">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-sky-600 text-white text-center relative overflow-hidden">
+      <section className="pt-32 pb-20 px-6 bg-sky-500 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img 
             src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop" 

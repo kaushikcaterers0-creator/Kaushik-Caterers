@@ -40,30 +40,30 @@ const testimonials = [
 
 function AboutPage() {
   return (
-    <Layout bgColor="bg-[#004d00]">
+    <Layout bgColor="bg-green-50">
       {/* Hero Section */}
-      <div className="py-20 px-6 text-white">
+      <div className="py-20 px-6 text-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Our Legacy</h2>
-            <div className="h-1.5 w-24 bg-yellow-400 mx-auto mb-12"></div>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-red-900">Our Legacy</h2>
+            <div className="h-1.5 w-24 bg-red-600 mx-auto mb-12"></div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
-                <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">41+</div>
-                <div className="text-xs md:text-sm uppercase tracking-widest font-bold opacity-70">Years of Legacy</div>
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100">
+                <div className="text-4xl md:text-5xl font-black text-red-600 mb-2">41+</div>
+                <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-500">Years of Legacy</div>
               </div>
-              <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
-                <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">4000+</div>
-                <div className="text-xs md:text-sm uppercase tracking-widest font-bold opacity-70">Events Done</div>
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100">
+                <div className="text-4xl md:text-5xl font-black text-red-600 mb-2">4000+</div>
+                <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-500">Events Done</div>
               </div>
-              <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
-                <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">100%</div>
-                <div className="text-xs md:text-sm uppercase tracking-widest font-bold opacity-70">Satisfaction</div>
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100">
+                <div className="text-4xl md:text-5xl font-black text-red-600 mb-2">100%</div>
+                <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-500">Satisfaction</div>
               </div>
-              <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm border border-white/10">
-                <div className="text-4xl md:text-5xl font-black text-yellow-400 mb-2">PAN</div>
-                <div className="text-xs md:text-sm uppercase tracking-widest font-bold opacity-70">India Presence</div>
+              <div className="bg-white p-8 rounded-2xl shadow-xl border border-green-100">
+                <div className="text-4xl md:text-5xl font-black text-red-600 mb-2">PAN</div>
+                <div className="text-xs md:text-sm uppercase tracking-widest font-bold text-slate-500">India Presence</div>
               </div>
             </div>
           </div>
@@ -118,16 +118,16 @@ function AboutPage() {
 
               <div className="grid grid-cols-3 gap-6 mt-12">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-400">1985</div>
-                  <div className="text-[10px] uppercase tracking-widest opacity-60">Founded</div>
+                  <div className="text-2xl font-bold text-red-600">1985</div>
+                  <div className="text-[10px] uppercase tracking-widest text-slate-500">Founded</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-400">2500+</div>
-                  <div className="text-[10px] uppercase tracking-widest opacity-60">Catering Capacity</div>
+                  <div className="text-2xl font-bold text-red-600">2500+</div>
+                  <div className="text-[10px] uppercase tracking-widest text-slate-500">Catering Capacity</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-400">PAN India</div>
-                  <div className="text-[10px] uppercase tracking-widest opacity-60">Service Area</div>
+                  <div className="text-2xl font-bold text-red-600">PAN India</div>
+                  <div className="text-[10px] uppercase tracking-widest text-slate-500">Service Area</div>
                 </div>
               </div>
             </div>
@@ -136,34 +136,34 @@ function AboutPage() {
           {/* Core Values */}
           <div className="mb-24">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
-              <p className="text-xl opacity-70">The principles that guide our service and define our legacy.</p>
+              <h2 className="text-4xl font-bold mb-4 text-red-900">Our Core Values</h2>
+              <p className="text-xl text-slate-600">The principles that guide our service and define our legacy.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white/5 p-10 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
-                <Award className="text-yellow-400 mb-6" size={48} />
-                <h4 className="text-2xl font-bold mb-4">Quality First</h4>
-                <p className="opacity-70">We use only the freshest ingredients and premium materials for every event.</p>
+              <div className="bg-white p-10 rounded-3xl border border-green-100 shadow-xl hover:shadow-2xl transition-all">
+                <Award className="text-red-600 mb-6" size={48} />
+                <h4 className="text-2xl font-bold mb-4 text-slate-900">Quality First</h4>
+                <p className="text-slate-600">We use only the freshest ingredients and premium materials for every event.</p>
               </div>
-              <div className="bg-white/5 p-10 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
-                <Heart className="text-yellow-400 mb-6" size={48} />
-                <h4 className="text-2xl font-bold mb-4">Customer Focused</h4>
-                <p className="opacity-70">Your satisfaction is our ultimate goal. We listen, adapt, and deliver.</p>
+              <div className="bg-white p-10 rounded-3xl border border-green-100 shadow-xl hover:shadow-2xl transition-all">
+                <Heart className="text-red-600 mb-6" size={48} />
+                <h4 className="text-2xl font-bold mb-4 text-slate-900">Customer Focused</h4>
+                <p className="text-slate-600">Your satisfaction is our ultimate goal. We listen, adapt, and deliver.</p>
               </div>
-              <div className="bg-white/5 p-10 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
-                <Users className="text-yellow-400 mb-6" size={48} />
-                <h4 className="text-2xl font-bold mb-4">Inclusive Service</h4>
-                <p className="opacity-70">Professional male and female staff ensuring comfort for all guests.</p>
+              <div className="bg-white p-10 rounded-3xl border border-green-100 shadow-xl hover:shadow-2xl transition-all">
+                <Users className="text-red-600 mb-6" size={48} />
+                <h4 className="text-2xl font-bold mb-4 text-slate-900">Inclusive Service</h4>
+                <p className="text-slate-600">Professional male and female staff ensuring comfort for all guests.</p>
               </div>
             </div>
           </div>
 
           {/* Why Choose Us */}
-          <div className="flex flex-col gap-12 mb-24 bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10">
+          <div className="flex flex-col gap-12 mb-24 bg-white p-8 md:p-12 rounded-[3rem] border border-green-100 shadow-2xl">
             <div>
-              <h3 className="text-yellow-400 font-bold uppercase tracking-widest mb-4">Why Choose Us</h3>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Excellence in Every Detail & Flavor</h2>
+              <h3 className="text-red-600 font-bold uppercase tracking-widest mb-4">Why Choose Us</h3>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900">Excellence in Every Detail & Flavor</h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   "Fully Customizable Menu tailored to your preferences",
@@ -172,15 +172,15 @@ function AboutPage() {
                   "Premium Tenting and Decoration solutions",
                   "41+ Years of expertise in event management"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-lg">
-                    <CheckCircle className="text-yellow-400 flex-shrink-0" size={24} />
+                  <li key={i} className="flex items-center gap-4 text-lg text-slate-700">
+                    <CheckCircle className="text-red-600 flex-shrink-0" size={24} />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-yellow-400 p-8 md:p-12 rounded-[2rem] text-green-900">
-              <h4 className="text-2xl font-bold mb-4">Registered & Trusted</h4>
+            <div className="bg-red-600 p-8 md:p-12 rounded-[2rem] text-white">
+              <h4 className="text-2xl font-bold mb-4 text-yellow-400">Registered & Trusted</h4>
               <p className="text-lg mb-4 opacity-90">We are a fully compliant business with GST registration, ensuring transparency and professionalism in all our dealings.</p>
               <p className="text-lg font-bold">GSTIN Number: <span className="break-all">05BJTPK9335D1ZY</span></p>
             </div>
@@ -189,8 +189,8 @@ function AboutPage() {
           {/* Testimonials */}
           <div className="mb-24">
             <div className="text-center mb-16">
-              <h3 className="text-yellow-400 font-bold uppercase tracking-widest mb-2">Testimonials</h3>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">What Our Clients Say</h2>
+              <h3 className="text-red-600 font-bold uppercase tracking-widest mb-2">Testimonials</h3>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900">What Our Clients Say</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

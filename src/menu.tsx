@@ -52,15 +52,15 @@ function MenuPage() {
   };
 
   return (
-    <Layout bgColor="bg-slate-900">
+    <Layout bgColor="bg-slate-50">
       <div className="pt-8 pb-20 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-12 relative">
-          <div className="absolute inset-0 bg-yellow-400/5 blur-3xl rounded-full -z-10" />
+          <div className="absolute inset-0 bg-red-400/5 blur-3xl rounded-full -z-10" />
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-yellow-400 font-bold uppercase tracking-widest mb-2"
+            className="text-red-600 font-bold uppercase tracking-widest mb-2"
           >
             Our Offerings
           </motion.h3>
@@ -69,7 +69,7 @@ function MenuPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-slate-900 mb-6"
           >
             Catering Menu
           </motion.h2>
@@ -77,9 +77,9 @@ function MenuPage() {
             initial={{ width: 0 }}
             whileInView={{ width: "100px" }}
             viewport={{ once: true }}
-            className="h-1.5 bg-yellow-400 mx-auto rounded-full mb-12"
+            className="h-1.5 bg-red-600 mx-auto rounded-full mb-12"
           />
-          <p className="text-white/60 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Explore our diverse range of culinary delights, from traditional favorites to modern fusion dishes.
           </p>
         </div>
