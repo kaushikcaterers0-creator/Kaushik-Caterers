@@ -126,7 +126,7 @@ export default function App() {
       <section className="w-full bg-white">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <img 
-            src="https://i.ibb.co/HpgBBvkM/Whats-App-Image-2026-04-02-at-12-43-06.jpg" 
+            src="https://i.ibb.co/vxyMX26Z/Whats-App-Image-2026-07-12-at-08-40-35.jpg" 
             alt="Promotional Banner" 
             className="w-full h-auto rounded-2xl shadow-2xl border-4 border-yellow-400/20"
             referrerPolicy="no-referrer"

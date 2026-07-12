@@ -22,7 +22,7 @@ export const galleryImages: GalleryImage[] = [
   { url: "https://i.ibb.co/qM3H5pV3/Whats-App-Image-2026-04-03-at-09-49-58-14.jpg", title: "Premium Feeling", category: "Events" },
   { url: "https://i.ibb.co/RGdgPMVf/Whats-App-Image-2026-04-03-at-09-49-58-15.jpg", title: "Counter", category: "Catering" },
   { url: "https://i.ibb.co/7d733scH/Whats-App-Image-2026-04-03-at-09-49-58-16.jpg", title: "Live Serving Buffet", category: "Catering" },
-  { url: "https://i.ibb.co/HpgBBvkM/Whats-App-Image-2026-04-02-at-12-43-06.jpg", title: "Banner", category: "Events" },
+  { url: "https://i.ibb.co/vxyMX26Z/Whats-App-Image-2026-07-12-at-08-40-35.jpg", title: "Banner", category: "Events" },
   { url: "https://i.ibb.co/N6pctxtt/Whats-App-Image-2026-04-03-at-09-49-58-18.jpg", title: "Beautiful Decoration", category: "Decorations" },
   { url: "https://i.ibb.co/35jWdXJS/Whats-App-Image-2026-04-03-at-09-49-58-19.jpg", title: "Haldi", category: "Events" },
   { url: "https://i.ibb.co/CpC7M1qR/Whats-App-Image-2026-04-03-at-09-49-58-20.jpg", title: "Buffet System", category: "Catering" },
@@ -79,5 +79,15 @@ export const galleryImages: GalleryImage[] = [
   { url: "https://i.ibb.co/dwg12tmg/Whats-App-Image-2026-04-03-at-09-50-02-1.jpg", title: "design", category: "Catering" },
   { url: "https://i.ibb.co/ksjxLkTP/Whats-App-Image-2026-04-03-at-09-50-02-2.jpg", title: "Skilled Multiyear Experience", category: "Team" },
   { url: "https://i.ibb.co/Kc12zBnS/Whats-App-Image-2026-04-03-at-09-50-02-3.jpg", title: "Named Wise Counters", category: "Catering" },
-  { url: "https://i.ibb.co/jvzydQPk/Whats-App-Image-2026-04-03-at-09-50-02-4.jpg", title: "bhandara", category: "Catering" }
+  { url: "https://i.ibb.co/jvzydQPk/Whats-App-Image-2026-04-03-at-09-50-02-4.jpg", title: "bhandara", category: "Catering" },
+  { url: "https://i.ibb.co/zT95Qz8F/Whats-App-Image-2026-07-12-at-08-39-36.jpg", title: "Elegant Event Setup", category: "Decorations" },
+  { url: "https://i.ibb.co/cK8FsfPf/Whats-App-Image-2026-07-12-at-08-39-46.jpg", title: "Premium Catering Display", category: "Catering" },
+  { url: "https://i.ibb.co/9H8Hkw4z/Whats-App-Image-2026-07-12-at-08-40-32.jpg", title: "Beautiful Stage Decor", category: "Decorations" },
+  { url: "https://i.ibb.co/HTGBHkkC/Whats-App-Image-2026-07-12-at-08-40-33.jpg", title: "Grand Celebration Setup", category: "Events" },
+  { url: "https://i.ibb.co/vxyMX26Z/Whats-App-Image-2026-07-12-at-08-40-35.jpg", title: "Royal Event Decoration", category: "Decorations" },
+  { url: "https://i.ibb.co/rKcCXGcQ/Whats-App-Image-2026-07-12-at-08-40-38.jpg", title: "Buffet Presentation", category: "Catering" },
+  { url: "https://i.ibb.co/DPW57Vth/Whats-App-Image-2026-07-12-at-08-40-39.jpg", title: "Exquisite Florals", category: "Decorations" },
+  { url: "https://i.ibb.co/rgWKpYr/Whats-App-Image-2026-07-12-at-08-40-44.jpg", title: "Elite Banquet Setup", category: "Events" },
+  { url: "https://i.ibb.co/Rpv60V6V/Whats-App-Image-2026-07-12-at-08-40-47.jpg", title: "Premium Food Platters", category: "Catering" },
+  { url: "https://i.ibb.co/yn0jcKDn/Whats-App-Image-2026-07-12-at-08-40-47-1.jpg", title: "Buffet Spread", category: "Catering" }
 ];
