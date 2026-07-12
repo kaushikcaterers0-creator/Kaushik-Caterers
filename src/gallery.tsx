@@ -102,7 +102,7 @@ function GalleryPage() {
                 className={`px-6 py-2 rounded-full font-bold transition-all duration-300 border-2 ${
                   activeFilter === cat 
                     ? 'bg-yellow-400 border-yellow-400 text-slate-900 shadow-[0_0_20px_rgba(250,204,21,0.3)] scale-105' 
-                    : 'bg-transparent border-white/20 text-white hover:border-yellow-400/50'
+                    : 'bg-transparent border-slate-300 text-slate-800 hover:border-yellow-400 hover:text-slate-900 hover:bg-yellow-400/10'
                 }`}
               >
                 {cat}
@@ -118,8 +118,8 @@ function GalleryPage() {
             className="mb-12"
           >
             <a 
-              href="/menu.html"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-yellow-400 hover:text-slate-900 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 border border-white/20 hover:border-yellow-400 group"
+              href="/menu"
+              className="inline-flex items-center gap-2 bg-slate-200 hover:bg-yellow-400 hover:text-slate-900 text-slate-900 px-8 py-3 rounded-full font-bold transition-all duration-300 border border-slate-300 hover:border-yellow-400 group shadow-sm"
             >
               View Our Full Menu
               <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
@@ -156,7 +156,7 @@ function GalleryPage() {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-white font-bold text-lg text-center group-hover:text-yellow-400 transition-colors">
+                <h3 className="text-slate-900 font-bold text-lg text-center group-hover:text-red-600 transition-colors">
                   {image.title}
                 </h3>
               </motion.div>

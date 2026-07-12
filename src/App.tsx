@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Layout from './components/Layout';
-import { motion } from 'motion/react';
-import { Utensils, Award, Users, Calendar, Star, Quote, ArrowRight, Camera } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Utensils, Award, Users, Calendar, Star, Quote, ArrowRight, Camera, ChevronDown, HelpCircle } from 'lucide-react';
 import { galleryImages } from './data/gallery';
 
 // Select 4 random images for highlights
@@ -72,7 +73,53 @@ const testimonials = [
   }
 ];
 
+const faqs = [
+  {
+    id: "faq-booking-advance",
+    question: "How far in advance should we book your services?",
+    answer: "We recommend booking as early as possible—typically 3 to 6 months in advance for grand weddings, Bhandaras, and major corporate events, especially during peak auspicious seasons. For smaller home events like birthdays or kitty parties, we can often accommodate bookings within 2 to 4 weeks depending on date availability.",
+    category: "Booking"
+  },
+  {
+    id: "faq-booking-process",
+    question: "What is the booking process and payment schedule?",
+    answer: "To lock in your date, we require an initial booking deposit and a signed event agreement. The remaining balance is structured in convenient installments, with the final payment due a few days prior to the event. We gladly accommodate last-minute guest count adjustments up to 72 hours before the service.",
+    category: "Booking"
+  },
+  {
+    id: "faq-pricing-calculation",
+    question: "How is your catering and planning pricing calculated?",
+    answer: "Our catering is charged transparently on a per-plate basis depending on your selected menu package (e.g., customized silver, gold, or royal packages). Event planning, floral decorations, and waterproof tent setups are quoted separately based on your specific theme choices, layout size, and custom requirements.",
+    category: "Pricing"
+  },
+  {
+    id: "faq-pricing-minimum",
+    question: "Do you have a minimum guest count or order value requirement?",
+    answer: "No event is too small or too large! We cater to intimate family kitty parties of 15-20 guests as well as grand multi-day wedding celebrations with over 1,500 guests. We design customized package options to deliver the best value and premium standard for any gathering size.",
+    category: "Pricing"
+  },
+  {
+    id: "faq-services-decor",
+    question: "Do you handle event decoration, stage setups, and tents too?",
+    answer: "Yes, absolutely! Kaushik Caterers is a comprehensive full-service event planner. Beyond our premium catering, we handle breathtaking floral designs, elegant entry themes, customized stages, sound systems, professional lighting, and complete premium tenting services.",
+    category: "Services"
+  },
+  {
+    id: "faq-services-diet",
+    question: "Can you accommodate dietary restrictions and custom menus?",
+    answer: "Yes, we pride ourselves on culinary customization. We specialize in strictly pure-vegetarian menus, traditional religious offerings (such as Bhandara foods made without onion or garlic), regional delicacies, and international starters. We also carefully accommodate allergies, vegan preferences, and specific dietary needs.",
+    category: "Services"
+  }
+];
+
 export default function App() {
+  const [activeFaqCategory, setActiveFaqCategory] = useState<string>('All');
+  const [expandedFaqId, setExpandedFaqId] = useState<string | null>(null);
+
+  const filteredFaqs = activeFaqCategory === 'All' 
+    ? faqs 
+    : faqs.filter(faq => faq.category === activeFaqCategory);
+
   return (
     <Layout bgColor="bg-red-50">
       {/* Hero Section */}
@@ -112,10 +159,10 @@ export default function App() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/contact.html" className="bg-yellow-400 text-red-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl transform hover:scale-105">
+            <a href="/contact" className="bg-yellow-400 text-red-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl transform hover:scale-105">
               Plan Your Event
             </a>
-            <a href="/services.html" className="bg-white/10 backdrop-blur-md text-white border-2 border-white/30 px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
+            <a href="/services" className="bg-white/10 backdrop-blur-md text-white border-2 border-white/30 px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">
               Explore Services
             </a>
           </div>
@@ -192,7 +239,7 @@ export default function App() {
                   <p className="text-xs md:text-sm text-slate-700 mb-6">
                     {service.description}
                   </p>
-                  <a href="/services.html" className="inline-flex items-center gap-2 text-red-700 font-bold text-xs md:text-sm hover:gap-3 transition-all">
+                  <a href="/services" className="inline-flex items-center gap-2 text-red-700 font-bold text-xs md:text-sm hover:gap-3 transition-all">
                     Visit us <ArrowRight size={16} />
                   </a>
                 </div>
@@ -202,7 +249,7 @@ export default function App() {
 
           <div className="mt-16 text-center">
             <motion.a 
-              href="/services.html"
+              href="/services"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -225,7 +272,7 @@ export default function App() {
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900">Recent Event Highlights</h2>
             </div>
             <a 
-              href="/gallery.html" 
+              href="/gallery" 
               className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-bold transition-all flex items-center gap-2"
             >
               View More in Gallery <ArrowRight size={20} />
@@ -303,12 +350,110 @@ export default function App() {
         </div>
       </section>
 
+      {/* Frequently Asked Questions Section */}
+      <section className="py-24 px-6 bg-white relative overflow-hidden" id="faq-section">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-red-50 rounded-full blur-3xl opacity-60 pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-yellow-50 rounded-full blur-3xl opacity-60 pointer-events-none translate-x-1/3 translate-y-1/3"></div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h3 className="text-red-600 font-bold uppercase tracking-widest mb-2 flex items-center justify-center gap-2">
+              <HelpCircle size={20} className="text-red-600" /> Customer Support
+            </h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-slate-600 max-w-lg mx-auto">
+              Got questions about booking, pricing, or our specialized catering and decor services? Find the answers below.
+            </p>
+          </div>
+
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12" id="faq-categories">
+            {['All', 'Booking', 'Pricing', 'Services'].map((category) => (
+              <button
+                key={category}
+                id={`faq-btn-${category.toLowerCase()}`}
+                onClick={() => {
+                  setActiveFaqCategory(category);
+                  setExpandedFaqId(null);
+                }}
+                className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 active:scale-95 ${
+                  activeFaqCategory === category
+                    ? 'bg-red-600 text-white shadow-lg shadow-red-600/25'
+                    : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Accordion List */}
+          <div className="space-y-4" id="faq-accordion-list">
+            <AnimatePresence initial={false}>
+              {filteredFaqs.map((faq) => {
+                const isExpanded = expandedFaqId === faq.id;
+                return (
+                  <motion.div
+                    key={faq.id}
+                    id={faq.id}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
+                      isExpanded 
+                        ? 'border-yellow-400 bg-red-50/30 shadow-md shadow-red-50/10' 
+                        : 'border-slate-100 hover:border-slate-200 bg-slate-50/50 hover:bg-slate-50'
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      id={`${faq.id}-trigger`}
+                      onClick={() => setExpandedFaqId(isExpanded ? null : faq.id)}
+                      className="w-full flex justify-between items-center p-6 text-left font-bold text-slate-800 text-base md:text-lg select-none gap-4"
+                    >
+                      <span className="flex items-center gap-3">
+                        <span className={`w-2 h-2 transition-all duration-300 rounded-full ${
+                          isExpanded ? 'bg-red-600 scale-125' : 'bg-slate-300'
+                        }`} />
+                        {faq.question}
+                      </span>
+                      <ChevronDown
+                        size={20}
+                        className={`text-slate-500 transition-transform duration-300 shrink-0 ${
+                          isExpanded ? 'rotate-180 text-red-600' : ''
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.div
+                          id={`${faq.id}-content`}
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.25, ease: "easeInOut" }}
+                        >
+                          <div className="px-6 pb-6 pt-1 text-slate-600 leading-relaxed text-sm md:text-base pl-11 border-t border-dashed border-slate-100 mt-2">
+                            {faq.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20 px-6 bg-red-600 text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-yellow-400">Ready to make your event legendary?</h2>
           <p className="text-lg opacity-80 mb-10">Contact Rahul Kaushik today for a customized quote and expert planning.</p>
-          <a href="/contact.html" className="bg-yellow-400 text-red-900 px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl inline-block">
+          <a href="/contact" className="bg-yellow-400 text-red-900 px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl inline-block">
             Visit us
           </a>
         </div>

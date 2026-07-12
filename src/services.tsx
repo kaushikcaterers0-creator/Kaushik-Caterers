@@ -10,37 +10,37 @@ const serviceCategories = [
     title: "Catering Services",
     image: "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop",
     description: "Premium catering for all occasions with a focus on taste and hygiene.",
-    link: "/catering-services.html"
+    link: "/catering-services"
   },
   {
     title: "Party Planning",
     image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop",
     description: "From birthdays to kitty parties, we make every celebration special.",
-    link: "/party-planning.html"
+    link: "/party-planning"
   },
   {
     title: "Wedding Services",
     image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop",
     description: "Grand celebrations with exquisite decor and royal catering.",
-    link: "/wedding-services.html"
+    link: "/wedding-services"
   },
   {
     title: "Decoration Services",
     image: "https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=2070&auto=format&fit=crop",
     description: "Stunning floral and theme-based decorations for your events.",
-    link: "/decoration-services.html"
+    link: "/decoration-services"
   },
   {
     title: "Corporate Events",
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
     description: "Professional planning for your corporate meetings and conferences.",
-    link: "/corporate-events.html"
+    link: "/corporate-events"
   },
   {
     title: "Religious & Social",
     image: "https://i.ibb.co/93nrJLcD/Whats-App-Image-2026-04-02-at-09-55-35.jpg",
     description: "Traditional and respectful planning for your religious gatherings.",
-    link: "/religious-social.html"
+    link: "/religious-social"
   }
 ];
 
@@ -230,7 +230,7 @@ function ServicesPage() {
             transition={{ delay: 0.3 }}
           >
             <a 
-              href="/packages.html"
+              href="/packages"
               className="inline-flex items-center gap-3 bg-red-900 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-red-800 transition-all shadow-xl shadow-red-900/20 group"
             >
               <PartyPopper size={24} />
@@ -247,7 +247,7 @@ function ServicesPage() {
           <h2 className="text-4xl font-bold mb-6">Ready to Book Your Event?</h2>
           <p className="text-xl opacity-80 mb-10">Let us handle the details while you enjoy your special moments.</p>
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="/contact.html" className="bg-yellow-400 text-sky-900 px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl">
+            <a href="/contact" className="bg-yellow-400 text-sky-900 px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all shadow-2xl">
               Book Appointment
             </a>
           </div>

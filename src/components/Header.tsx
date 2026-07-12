@@ -23,12 +23,12 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-sm font-medium">
           <a href="/" className="hover:text-yellow-400 transition-colors">Home</a>
-          <a href="/services.html" className="hover:text-yellow-400 transition-colors">Services</a>
-          <a href="/gallery.html" className="hover:text-yellow-400 transition-colors">Gallery</a>
-          <a href="/menu.html" className="hover:text-yellow-400 transition-colors">Menu</a>
-          <a href="/packages.html" className="hover:text-yellow-400 transition-colors">Packages</a>
-          <a href="/about.html" className="hover:text-yellow-400 transition-colors">About Us</a>
-          <a href="/contact.html" className="hover:text-yellow-400 transition-colors">Contact Us</a>
+          <a href="/services" className="hover:text-yellow-400 transition-colors">Services</a>
+          <a href="/gallery" className="hover:text-yellow-400 transition-colors">Gallery</a>
+          <a href="/menu" className="hover:text-yellow-400 transition-colors">Menu</a>
+          <a href="/packages" className="hover:text-yellow-400 transition-colors">Packages</a>
+          <a href="/about" className="hover:text-yellow-400 transition-colors">About Us</a>
+          <a href="/contact" className="hover:text-yellow-400 transition-colors">Contact Us</a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -44,12 +44,12 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden mt-4 flex flex-col gap-4 pb-4 border-t border-white/10 pt-4">
           <a href="/" className="hover:text-yellow-400 transition-colors px-2">Home</a>
-          <a href="/services.html" className="hover:text-yellow-400 transition-colors px-2">Services</a>
-          <a href="/gallery.html" className="hover:text-yellow-400 transition-colors px-2">Gallery</a>
-          <a href="/menu.html" className="hover:text-yellow-400 transition-colors px-2">Menu</a>
-          <a href="/packages.html" className="hover:text-yellow-400 transition-colors px-2">Packages</a>
-          <a href="/about.html" className="hover:text-yellow-400 transition-colors px-2">About Us</a>
-          <a href="/contact.html" className="hover:text-yellow-400 transition-colors px-2">Contact Us</a>
+          <a href="/services" className="hover:text-yellow-400 transition-colors px-2">Services</a>
+          <a href="/gallery" className="hover:text-yellow-400 transition-colors px-2">Gallery</a>
+          <a href="/menu" className="hover:text-yellow-400 transition-colors px-2">Menu</a>
+          <a href="/packages" className="hover:text-yellow-400 transition-colors px-2">Packages</a>
+          <a href="/about" className="hover:text-yellow-400 transition-colors px-2">About Us</a>
+          <a href="/contact" className="hover:text-yellow-400 transition-colors px-2">Contact Us</a>
         </nav>
       )}
     </header>

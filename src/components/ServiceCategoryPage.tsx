@@ -36,7 +36,7 @@ export default function ServiceCategoryPage({ title, description, services }: Se
       <div className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div className="mb-12">
           <a 
-            href="/services.html" 
+            href="/services" 
             className="inline-flex items-center gap-2 text-red-900 font-bold hover:gap-3 transition-all mb-8"
           >
             <ArrowLeft size={20} /> Back to Services
