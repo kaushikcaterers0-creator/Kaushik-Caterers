@@ -118,7 +118,7 @@ function GalleryPage() {
             className="mb-12"
           >
             <a 
-              href="/menu"
+              href="/menu.html"
               className="inline-flex items-center gap-2 bg-slate-200 hover:bg-yellow-400 hover:text-slate-900 text-slate-900 px-8 py-3 rounded-full font-bold transition-all duration-300 border border-slate-300 hover:border-yellow-400 group shadow-sm"
             >
               View Our Full Menu
